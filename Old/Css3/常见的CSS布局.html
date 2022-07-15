@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        .left {
+		float: left;
+		width: 100px;
+		height: 200px;
+		background: red;
+	}
+	.right {
+		float: right;
+		width: 200px;
+		height: 200px;
+		background: blue;
+	}
+	.main {
+		margin-left: 120px;
+		margin-right: 220px;
+		height: 200px;
+		background: green;
+	}
+    </style> -->
+
+
+    <style>
+        .box {
+            height: 200px;
+        }
+
+        .box>div {
+            height: 100%;
+        }
+
+        .box-left {
+            width: 200px;
+            float: left;
+            background-color: blue;
+        }
+
+        .box-right {
+            background-color: red;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 流体布局 -->
+    <!-- <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="main"></div>
+    </div> -->
+    <div class="box">
+        <div class="box-left"></div>
+        <div class="box-right"></div>
+    </div>
+</body>
+
+</html>

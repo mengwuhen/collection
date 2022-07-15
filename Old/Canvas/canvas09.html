@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>save()和restore()</title>
+	<style>
+		canvas{
+			border:  1px solid red;
+		}
+		.wraper{
+			width: 100%;
+			display: flex;
+			justify-content:center;
+			align-items: flex-start;
+		}
+		tbody {
+		    display: table-row-group;
+		    vertical-align: middle;
+		    border-color: inherit;
+		}
+		
+	</style>
+</head>
+<body>
+	<dl>
+		<dt>save()和restore()</dt>
+		<dd>Canvas的API提供了两个名叫save()和restore()的方法，用于保存及恢复当前Canvas绘图环境的所有属性。其中save()可以保存当前状态，而restore()可以还原之前保存的状态。应用于涉及到坐标系统的变换和图形变换方面</dd>
+		<dd>
+			<dl>
+				<dt>状态定义</dt>
+				<dd> <table>
+				<thead>
+				<tr>
+				  <th>属性</th>
+				  <th>描述</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				  <td><code>canvas</code></td>
+				  <td>取得画布<code>&lt;canvas&gt;</code>元素</td>
+				</tr>
+				<tr>
+				  <td><code>fillStyle</code></td>
+				  <td>填充路径的当前的颜色、模式或渐变</td>
+				</tr>
+				<tr>
+				  <td><code>globalCompositeOperation</code></td>
+				  <td>指定颜色如何与画布上已有颜色组合（合成）</td>
+				</tr>
+				<tr>
+				  <td><code>lineCap</code></td>
+				  <td>指定线段端点的绘制方式</td>
+				</tr>
+				<tr>
+				  <td><code>lineJoin</code></td>
+				  <td>指定线段连接的绘制方式</td>
+				</tr>
+				<tr>
+				  <td><code>lineWidth</code></td>
+				  <td>绘制线段的宽度</td>
+				</tr>
+				<tr>
+				  <td><code>miterLimit</code></td>
+				  <td>当<code>lineJoin</code>为<code>miter</code>时，这个属性指定斜连接长度和二分之一线宽的最大比率</td>
+				</tr>
+				<tr>
+				  <td><code>shadowBlur</code></td>
+				  <td>指定阴影模糊度</td>
+				</tr>
+				<tr>
+				  <td><code>shadowColor</code></td>
+				  <td>指定阴影颜色</td>
+				</tr>
+				<tr>
+				  <td><code>shadowOffsetX</code></td>
+				  <td>指定阴影水平偏移值</td>
+				</tr>
+				<tr>
+				  <td><code>shadowOffsetY</code></td>
+				  <td>指定阴影垂直偏移值</td>
+				</tr>
+				<tr>
+				  <td><code>strokeStyle</code></td>
+				  <td>指定线段颜色</td>
+				</tr>
+				</tbody>
+				</table></dd>
+			</dl>
+		</dd>
+	</dl>
+	<div class="wraper">
+		<div >
+			<canvas id='canvas'  style="width:300px;height:300px;"></canvas>
+		</div>
+	</div>
+	
+	<dl>
+		<dt>绘制扇形</dt>
+		<dd></dd>
+	</dl>
+	<div class="wraper">
+		<div >
+			<canvas id='demo'  style="width:300px;height:300px;"></canvas>
+		</div>
+	</div>
+
+	
+
+	<script>
+
+		window.onload = function () {
+			let canvas = document.getElementById('canvas')
+			let ctx = canvas.getContext('2d')
+			let devicePixelRatio = window.devicePixelRatio || 1
+			let backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
+			ctx.mozBackingStorePixelRatio ||
+			ctx.msBackingStorePixelRatio ||
+			ctx.oBackingStorePixelRatio ||
+			ctx.backingStorePixelRatio || 1
+			let ratio = devicePixelRatio / backingStoreRatio
+			canvas.width = canvas.clientWidth * 2
+			canvas.height = canvas.clientHeight * 2
+
+
+
+		}
+
+
+</script>
+</body>
+</html>

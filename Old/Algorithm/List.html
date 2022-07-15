@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+
+        h1,h2,h3{
+            text-align: center;
+        }
+        .content{
+            width: 800px;
+            min-height: 600px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="content">
+
+        <!-- <h2>数据结构链表</h2> -->
+
+        <!-- <div>查找节点 插入节点、删除 节点、显示列表元素</div> -->
+    </div>
+
+    
+</body>
+
+<script>
+        class Node {
+            constructor(value,next){
+                this.next = next
+                this.value = value
+            }
+        }
+
+        class List {
+            constructor(){
+                this.head = new Node('head')
+            }
+
+            findNode(node){
+               let currentNode =  this.head
+               while(currentNode.value != item){
+                currentNode.next = item
+               }
+               return currentNode
+            }
+
+            insert(newNode,node){
+                let newEle = new Node(newNode)
+                let currentNode = findNode(node)
+                newNode.next = currentNode.value
+                currentNode.next = newNode
+            }
+        }
+</script>
+</html>

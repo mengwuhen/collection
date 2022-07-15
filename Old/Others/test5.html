@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+    <style>
+        /* .test{
+            width: 500px;
+            height: 60px;
+            padding: 50px;
+            margin: 100px;
+            border: 1px solid #000;
+        } */
+
+        body,
+        p,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        image,
+        span,
+        ul,
+        li,
+        dl,
+        dd,
+        dt {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* .test{
+            float: left;
+            height: 100vh;
+            width: 200px;
+            background: aqua
+        }
+        .test2{
+            height: 100vh;
+            width: 100%;
+            background: bisque
+        }
+        .test3{
+            float: right;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 400px;
+            background: blueviolet
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="test"></div>
+    <div class="test2"></div>
+    <div class="test3"></div>
+
+    <script>
+        var addTwoNumbers = function (l1, l2) {
+            l1 = l1+''
+            l2 = l2 + ''
+            let len = l1.length > l2.length ? l1.length : l2.length
+            let $arr1 = (l1+'').split('').reverse()
+            let $arr2 = (l2+'').split('').reverse()
+            let flag = 0
+            let result = []
+            for(let i= 0; i<len ; i++){
+                $arr1[i] == undefined ? $arr1[i] = 0 : $arr1[i]
+                $arr2[i] == undefined ? $arr2[i] = 0 : $arr2[i]
+                if($arr1[i]/1 + $arr2[i]/1 >= 10){
+                    result.push((($arr1[i]/1 + $arr2[i]/1 + '').split('')[1]/1 + flag)/1)
+                    flag = 1
+                } else {
+                    result.push((($arr1[i]/1 + $arr2[i]/1) + flag)/1)
+                    flag = 0
+                }
+            }
+            
+            return result.reverse().join('')/1
+        }
+
+        console.warn(addTwoNumbers(789,6789))
+    </script>
+</body>
+
+</html>

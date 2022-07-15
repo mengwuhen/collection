@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+     class Event {
+       constructor(){
+
+       }
+
+       userList = {}
+
+         subscribe(key, fn) {
+           console.warn(this)
+            if (!this.userList[key]) {
+                this.userList[key] = [];
+            }
+            this.userList[key].push(fn);
+        }
+          publish () {
+            var key = Array.prototype.shift.apply(arguments),
+                fns = this.userList[key];
+            if (!fns || fns.length === 0) {
+                console.log('没有人订阅' + key + "这个分类的文章");
+                return false;
+            }
+            for (var i = 0, len = fns.length; i < len; i++) {
+                fns[i].apply(this, arguments);
+            }
+        }
+        }
+
+        var extend = function( dstObj, srcObj ){
+            for( var key in srcObj ){
+                dstObj[key] = srcObj[key];
+            }
+        }
+
+        var Site =  new Event();
+        // extend( Site, Event );
+        console.warn('Site',Site)
+         Site.subscribe( "javascript", function( title ){
+            console.log( title );
+        });
+
+        Site.subscribe( "es6", function( title ){
+            console.log( title );
+        });
+
+        Site.publish( "javascript", "寄生组合式继承的优势" );
+        Site.publish( "es6", "es6系列教程 - var, let, const详解" );
+        Site.publish( "html5", "html5新的语义化标签" );
+
+        var Site2 =  new Event();
+
+        Site2.subscribe( "html5", function( title ){
+            console.log( title );
+        });
+
+        Site2.publish( "html5", "html5新的语义化标签" );
+
+        console.warn( Site2 === Site)
+    </script>
+</body>
+</html>
